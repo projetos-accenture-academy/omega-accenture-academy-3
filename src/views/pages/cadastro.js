@@ -12,12 +12,12 @@ let cadastro = {
             </div>
             <div class="col">
                 <div class="md-6">
-                    <input type="text" id="cpf" maxlength="11" placeholder="Insira seu CPF" class="form-control">
-                    <input type="text" id="username" placeholder="name" class="form-control">
-                    <input type="text" id="fname" placeholder="email" class="form-control">
-                    <input type="password" id="password" placeholder="password" class="form-control">
-                    <input type="password" id="re_password" placeholder="password" class="form-control"> 
-                    <button id="submit_new_register" class="form-control btn btn-outline-info">Cadastrar</button>
+                    <input type="text" id="cpf" maxlength="11" placeholder="Insira seu CPF" class="form-control mb-3">
+                    <input type="text" id="username" placeholder="name" class="form-control mb-3">
+                    <input type="text" id="fname" placeholder="email" class="form-control mb-3">
+                    <input type="password" id="password" placeholder="password" class="form-control mb-3">
+                    <input type="password" id="re_password" placeholder="password" class="form-control mb-3"> 
+                    <button id="submit_new_register" class="form-control btn btn-outline-dark"><b>Cadastrar</b></button>
                 </div>
             </div>
         </div>
