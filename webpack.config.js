@@ -9,7 +9,7 @@ const config =  {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000,
-    hotOnly: true,
+    hot: true,
     open: true
   },
   output: {

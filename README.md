@@ -17,6 +17,34 @@ Tecnologias utilizadas:
 
 -   <a href="https://omega-accenture-academy-3.netlify.app/" target="_blank">Ômega Bank</a>
 
+<h2 align="center">Instalação</h2>
+
+Usando npm:
+
+```bash
+npm install
+```
+
+Usando yarn:
+
+```bash
+yarn install
+```
+
+<h2 align="center">Executando localmente</h2>
+
+Usando npm:
+
+```bash
+npm start
+```
+
+Usando yarn:
+
+```bash
+yarn start
+```
+
 ### 🧑‍🤝‍🧑 Autores
 
 [<a href="https://github.com/alecanutto" title="GitHub">Alessandra Canuto 🚀 </a>]
