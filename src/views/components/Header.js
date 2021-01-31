@@ -1,11 +1,37 @@
 import Constants from '../../service/constants';
+import Auth from '../../service/auth'
 
 let Header = {
     render: async () => {
         const userData = JSON.parse(localStorage.getItem(Constants.userDataCollection));
 
-        let firstName = userData ? userData.usuario.nome.split(' ')[0] : '<vazio>' ;
+        const firstName = userData ? userData.usuario.nome.split(' ')[0] : '<vazio>' ;
         
+        const viewAdmin = `<li class="nav-item">
+                                    <a class="nav-link" href="/#/dashboard">Dashboard</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Olá, ${firstName}
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item">Dados pessoais</a></li>
+                                        <li><a class="dropdown-item">Alterar senha</a></li>
+                                        <li><a class="dropdown-item" id="logout">Sair</a></li>
+                                    </ul>
+                                </li>`
+
+        const viewCommon = `<li class="nav-item">
+                                <a class="nav-link" href="/#/home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/#/login">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/#/cadastro">Cadastre-se</a>
+                                </li>`
+
         let view = `
             <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 mb-4">
                 <div class="container d-flex justify-content-between">
@@ -19,29 +45,7 @@ let Header = {
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul class="navbar-nav ">
                         ${await Auth.isAuthenticated() 
-                            ?  `<li class="nav-item">
-                                    <a class="nav-link" href="dashboard.html">Dashboard</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Olá, ${firstName}
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <li><a class="dropdown-item">Dados pessoais</a></li>
-                                        <li><a class="dropdown-item">Alterar senha</a></li>
-                                        <li><a class="dropdown-item" id="logout">Sair</a></li>
-                                    </ul>
-                                </li>` 
-                            :  `<li class="nav-item">
-                                <a class="nav-link" href="index.html">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="login.html">Logar</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="cadastro.html">Cadastre-se</a>
-                                </li>`
+                            ?  viewAdmin : viewCommon
                         }
                         </ul>
                     </div>

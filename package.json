@@ -23,6 +23,7 @@
     "browser-sync": "^2.26.0",
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.1",
     "rollup": "^0.66.4",
     "style-loader": "^2.0.0",
     "webpack": "^5.18.0",
@@ -31,7 +32,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.2",
-    "html-webpack-plugin": "^4.5.1",
     "services": "0.0.3"
   }
 }

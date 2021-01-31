@@ -1,6 +1,10 @@
 import Utils from './service/utils.js';
 import Footer from './views/components/Footer.js';
+import Header from './views/components/Header.js';
 import Loading from './views/components/Loading.js';
+
+import Dash from './views/pages/Dash.js';
+import Error404 from './views/pages/Error404.js';
 
 import cssLoading from '../src/css/loading.css';
 import cssDashboard from '../src/css/styles-dashboard.css';
@@ -11,7 +15,10 @@ import cssDashboard from '../src/css/styles-dashboard.css';
 // 
 let routes = {
     //'/':          {route: Home, fullPage: false},
-    /*'/login':     {route: Login, fullPage: true},*/
+    //'/login':     {route: '', fullPage: true},
+    //'/home':     {route: '', fullPage: false},
+    //'/cadastro':     {route: '', fullPage: false},
+    '/dashboard': {route: Dash, fullPage: false}
 }
 
 
@@ -31,10 +38,10 @@ const router = async () => {
     let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '')
     
     if(routes[parsedURL] && !routes[parsedURL].fullPage){
-        // Renderizar o cabeçalho e rodapé da página
-        header.innerHTML = await Nav.render();
+        header.innerHTML = await Header.render();
         await Header.after_render();
         
+        // Exibe um loading enquanto a da rota não é renderizada
         content.innerHTML = await Loading.render();
 
         footer.innerHTML = await Footer.render();
@@ -47,9 +54,22 @@ const router = async () => {
 
     // Obtenha a página de nosso hash de rotas com suporte.
     // Se o URL analisado não estiver em nossa lista de rotas compatíveis, selecione a página 404
-    let page = routes[parsedURL] ? routes[parsedURL].route : Error404
-    content.innerHTML = await page.render();
-    await page.after_render();
+    // let page = routes[parsedURL] ? routes[parsedURL].route : Error404
+    
+    if(routes[parsedURL]){ 
+       let page =routes[parsedURL].route 
+       content.innerHTML = await page.render();
+       await page.after_render();
+    }
+    else { console.log('1')
+        header.innerHTML = await Header.render();
+        await Header.after_render();
+        
+        content.innerHTML = await Error404.render();
+
+        footer.innerHTML = await Footer.render();
+        await Footer.after_render();
+    }
   
 }
 
