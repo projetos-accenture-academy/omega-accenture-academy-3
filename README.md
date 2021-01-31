@@ -56,3 +56,4 @@ yarn start
 \
 \
 \
+[![Netlify Status](https://api.netlify.com/api/v1/badges/03eaf869-88d5-4990-9a46-50d3fea56bf1/deploy-status)](https://app.netlify.com/sites/omega-accenture-academy-3/deploys)
