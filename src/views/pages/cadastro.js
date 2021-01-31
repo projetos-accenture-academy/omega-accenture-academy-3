@@ -7,17 +7,17 @@ let cadastro = {
         <div class="container d-flex">
             <div class="col">
                 <div class="md-12">
-                    <h1>Cadastro</h1>
+                   
                 </div>
             </div>
             <div class="col">
                 <div class="md-6">
-                    <input type="text" id="cpf" maxlength="11" placeholder="Insira seu CPF">
-                    <input type="text" id="username" placeholder="name">
-                    <input type="text" id="fname" placeholder="email">
-                    <input type="password" id="password" placeholder="password">
-                    <input type="password" id="re_password" placeholder="password">
-                    <button id="submit_new_register">Cadastrar</button>
+                    <input type="text" id="cpf" maxlength="11" placeholder="Insira seu CPF" class="form-control">
+                    <input type="text" id="username" placeholder="name" class="form-control">
+                    <input type="text" id="fname" placeholder="email" class="form-control">
+                    <input type="password" id="password" placeholder="password" class="form-control">
+                    <input type="password" id="re_password" placeholder="password" class="form-control"> 
+                    <button id="submit_new_register" class="form-control btn btn-outline-info">Cadastrar</button>
                 </div>
             </div>
         </div>

@@ -2,12 +2,10 @@ import Utils from './service/utils.js';
 import Footer from './views/components/Footer.js';
 import Header from './views/components/Header.js';
 import Loading from './views/components/Loading.js';
-
+import cadastro from './views/pages/cadastro.js';
 import Dash from './views/pages/Dash.js';
 import Error404 from './views/pages/Error404.js';
 
-import cssLoading from '../src/css/loading.css';
-import cssDashboard from '../src/css/styles-dashboard.css';
   
 // Utils
 // Lista de rotas com suporte para full page, assim se fullPage for 'TRUE',
@@ -17,7 +15,7 @@ let routes = {
     //'/':          {route: Home, fullPage: false},
     //'/login':     {route: '', fullPage: true},
     //'/home':     {route: '', fullPage: false},
-    //'/cadastro':     {route: '', fullPage: false},
+    '/cadastro':     {route: cadastro, fullPage: false},
     '/dashboard': {route: Dash, fullPage: false}
 }
 
