@@ -6,13 +6,13 @@
  */
 const Constants = {
     // Dados obtidos no login
-    userDataCollection   = "@userDataCollection",
+    userDataCollection   : "@userDataCollection",
 
     // Planos de contas do usuário
-    userAccountPlans     = "@userAccountPlans",
+    userAccountPlans     : "@userAccountPlans",
 
     // Dados do dashboard (extrato de transações)
-    userAccountStatements = "@userAccountStatements",
+    userAccountStatements : "@userAccountStatements",
 };
 
 export default Constants;
