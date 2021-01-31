@@ -12,7 +12,7 @@ const requestDashboard = async () => {
             .get(`${baseURL}dashboard?fim=2021-01-31&inicio=2021-01-01&login=${login}`,  {
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c3VhcmlvdGVzdGUiLCJpZFVzdWFyaW8iOjgsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MTIwNjE2NDgsImV4cCI6MTYxMjA2NTI0OH0.yNFpirvhnpa1O3Tx0vfZH__hXCaMHxFJfM8Cp_CKE_Sy1n64Itj8aIVxmy3ssJJWcw4JllPegBRw6DXl_xotWQ"
+                    "Authorization": token
                 }
             })
             .then(
