@@ -2,7 +2,7 @@
     Ωmega Bank
 </h1>
 
-<p align="center">Projeto desenvolvido pelo Grupo Ômega para o desafio de HTML5 da ACCT2 🎓 (2021). <br/></p>
+<p align="center">Projeto desenvolvido pelo Grupo Ômega para o desafio de JavaScript - SPA Vanilla da ACCT2 🎓 (2021). <br/></p>
 
 ### 🛠 Tecnologias
 
@@ -11,10 +11,11 @@ Tecnologias utilizadas:
 -   [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 -   [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5)
 -   [BOOTSTRAP](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+-   [JAVASCRIPT](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 
 ### 🔗 Acesse em
 
--   <a href="https://omega-accenture-academy-2.netlify.app/" target="_blank">Ômega Bank</a>
+-   <a href="https://omega-accenture-academy-3.netlify.app/" target="_blank">Ômega Bank</a>
 
 ### 🧑‍🤝‍🧑 Autores
 
@@ -27,4 +28,3 @@ Tecnologias utilizadas:
 \
 \
 \
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4a2d3ae7-6d8d-48d0-975d-5785f5077f28/deploy-status)](https://app.netlify.com/sites/omega-accenture-academy-2/deploys)
