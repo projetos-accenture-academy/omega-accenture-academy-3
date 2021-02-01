@@ -4,21 +4,24 @@ import baseURL from '../../service/baseURL.js';
 let cadastro = {
     render : async () => {
         let view = `
-        <div class="container d-flex">
-            <div class="col">
-                <div class="md-12">
+        <div class="container ">
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
                    
                 </div>
-            </div>
-            <div class="col">
-                <div class="md-6">
-                    <input type="text" id="cpf" maxlength="11" placeholder="Insira seu CPF" class="form-control mb-3">
-                    <input type="text" id="username" placeholder="name" class="form-control mb-3">
-                    <input type="text" id="fname" placeholder="email" class="form-control mb-3">
-                    <input type="password" id="password" placeholder="password" class="form-control mb-3">
-                    <input type="password" id="re_password" placeholder="password" class="form-control mb-3"> 
+            
+            
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <input type="text" id="cpf" maxlength="11" placeholder="Insira o seu CPF" class="form-control mb-3">
+                    <input type="text" id="login" placeholder="Nome de usuário (apelido)" class="form-control mb-3">
+                    <input type="text" id="fname" placeholder="Escreva aqui o seu email" class="form-control mb-3">
+                    <input type="password" id="password" placeholder="Digite uma senha" class="form-control mb-3">
+                    <input type="password" id="re_password" placeholder="Confirme a sua senha" class="form-control mb-3"> 
                     <button id="submit_new_register" class="form-control btn btn-outline-dark"><b>Cadastrar</b></button>
                 </div>
+                
             </div>
         </div>
         `
