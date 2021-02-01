@@ -15,12 +15,12 @@ let cadastro = {
         
             <div class="row justify-content-center">
 
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                   
+                <div class="col-md-6 col-sm-12 col-xs-12 m-auto">
+                <img src="./img/signup.svg" class="img-fluid m-auto" width="100%" />
                 </div>
             
             
-                <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="col-md-6 col-sm-12 col-xs-12 m-auto" style="background-color:#f0f0f0;border-radius:15px;">
                 <div id='cadForm'>
                     <input type="text" id="cpf" maxlength="11" placeholder="Insira o seu CPF" class="form-control mb-3">
                     <input type="text" id="username" placeholder="Nome de usuário (apelido)" class="form-control mb-3">
