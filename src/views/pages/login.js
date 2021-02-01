@@ -2,13 +2,15 @@ import Auth from "../../service/auth.js";
 import baseURL from '../../service/baseURL.js';
 import Constants from "../../service/constants.js";
 import Utils from "../../service/utils.js";
+import loginImg from '../../images/login-omega.svg';
+
 
 
 const loginView = 
     `<div class="container">
         <div class="row mt-5 mb-5">
         <div class="col-md-6 m-auto">          
-            <img src="img/login-omega.svg" class="img-fluid m-auto" width="80%" alt="Ilustração Õmega">
+            <img src=${loginImg} class="img-fluid m-auto" width="80%" alt="Ilustração Õmega">
         </div>
         <div class="col-md-6 m-auto">
             <div class="card">
@@ -79,20 +81,21 @@ let Login =
                         {
 
                             //Save user data in local browser variable for further use
-                            localStorage.setItem(userDataCollection, JSON.stringify(res.data)); 
+                            localStorage.setItem(Constants.userDataCollection, JSON.stringify(res.data)); 
                             
                             Utils.RedirectUser('#/dashboard');
                         }
                     }
                 ).catch(err =>
                     {
-                        //console.log("Erro ao realizar o login:", err);
-                        localStorage.removeItem(userDataCollection)
-        
+                        
                         //Show error message for user
                         document.getElementById('login-error-warning').innerHTML = "Erro: Login e/ou senha incorretos."
                         //clean up password input
                         document.getElementById('password-input').value='';
+
+                        //console.log("Erro ao realizar o login:", err);
+        
                     })
             
                 

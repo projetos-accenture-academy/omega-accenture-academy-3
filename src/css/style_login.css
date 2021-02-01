@@ -28,7 +28,6 @@ p
     font-weight: 400;
 }
 
-
 /*------------ IDs ------------*/
 
 #btn-login {
@@ -57,7 +56,6 @@ p
   color: red;
 }
 
-
 /*------------ Classes ------------*/
 
 .btn-container {
@@ -75,7 +73,6 @@ p
   margin: 0;
 }
 
-
 .strong-p
 {
   font-weight: 500;
@@ -85,7 +82,6 @@ p
 {
   border-radius: 30px;
 }
-
 
 /*-------- Sobreescrevendo Bootstrap --------*/
 .nav-item {
