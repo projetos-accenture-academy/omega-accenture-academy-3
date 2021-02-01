@@ -1,11 +1,10 @@
 import Auth from "../../service/auth.js";
 import baseURL from '../../service/baseURL.js';
 import Constants from "../../service/constants.js";
+import Utils from "../../service/utils.js";
 
 
-const viewLogin = () =>
-{
-    return
+const loginView = 
     `<div class="container">
         <div class="row mt-5 mb-5">
         <div class="col-md-6 m-auto">          
@@ -31,16 +30,74 @@ const viewLogin = () =>
                 <p>Ainda não tem uma conta? <a href="./cadastro.html">Cadastre-se!</a></p>
                 </div>
                 <div class="btn-container">
-                <a id="btn-login" class="btn btn-primary" onclick="UserLogin()"> Login </a>
+                <a id="btn-login" class="btn btn-primary"> Login </a>
                 </div>
             </form>
             </div>
         </div>
         </div>
-    </div> `
-}
+    </div> `;
+
 
 let Login = 
 {
+    render: async () =>
+    {
+        //Checks if user is already authenticated; if so, redirect them to Dashboard
 
+        let isAuth = await Auth.isAuthenticated();
+
+        if(isAuth)
+        {
+            Utils.RedirectUser("#/dashboard");
+        }
+
+
+        return loginView;
+    },
+
+    after_render: async() =>
+    {
+
+        document.getElementById('btn-login').addEventListener('click', ()=>
+        {
+            let username = document.getElementById('username-input').value;
+            let password = document.getElementById('password-input').value;
+
+            console.log("Fazendo login...");
+            axios.post(`${baseURL}login`,
+                {
+                    senha: password,
+                    usuario: username
+                }
+                )
+                .then
+                (
+                    res=> 
+                    {
+                        if(res.status == 200)
+                        {
+
+                            //Save user data in local browser variable for further use
+                            localStorage.setItem(userDataCollection, JSON.stringify(res.data)); 
+                            
+                            Utils.RedirectUser('#/dashboard');
+                        }
+                    }
+                ).catch(err =>
+                    {
+                        //console.log("Erro ao realizar o login:", err);
+                        localStorage.removeItem(userDataCollection)
+        
+                        //Show error message for user
+                        document.getElementById('login-error-warning').innerHTML = "Erro: Login e/ou senha incorretos."
+                        //clean up password input
+                        document.getElementById('password-input').value='';
+                    })
+            
+                
+        } );
+    }
 }
+
+export default Login;
