@@ -16,7 +16,7 @@ let cadastro = {
             <div class="row justify-content-center">
 
                 <div class="col-md-6 col-sm-12 col-xs-12 m-auto">
-                <img src="./img/signup.svg" class="img-fluid m-auto" width="100%" />
+                <img src="/img/signup.svg" class="img-fluid m-auto" width="100%" />
                 </div>
             
             
