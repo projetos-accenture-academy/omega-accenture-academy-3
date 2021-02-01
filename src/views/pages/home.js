@@ -1,6 +1,8 @@
 import homeCSS from '../../css/style_home.css'
 import bankLogo from '../../images/bank-logo.png'
-
+import parallaxImg1 from '../../images/parallax-img-1.jpg'
+import parallaxImg2 from '../../images/parallax-img-2.jpeg'
+import parallaxImg3 from '../../images/parallax-img-3.jpeg'
 
     const homeView = 
     `
@@ -20,7 +22,6 @@ import bankLogo from '../../images/bank-logo.png'
                 </div>
             </div>
             <div class="col-md-6 m-auto p-3">
-                <!--<img src="https://assets.website-files.com/5ff79f3ebebf6b12f6b7747f/5ffe04fc6284b7e90070d985_logo-gama-academy.png" class="img-fluid m-auto" width="100%" alt="Imagem responsiva">-->
                 <img src=${bankLogo} class="img-fluid m-auto" width="100%" alt="Desafio 6">
             </div>
         </div>
@@ -39,7 +40,7 @@ import bankLogo from '../../images/bank-logo.png'
                     <div class="p-2 col-md-4">
                         <div class="card">
                             <img class="card-img rounded mx-auto d-block"
-                                src="https://image.freepik.com/free-vector/financial-investments-stock-market_101179-280.jpg"
+                                src=${parallaxImg1}
                                 class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title title">Investimentos conscientes</h5>
@@ -52,7 +53,7 @@ import bankLogo from '../../images/bank-logo.png'
                     <div class="p-2 col-md-4">
                         <div class="card">
                             <img class="card-img2 rounded mx-auto d-block"
-                                src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=995&q=80"
+                                src=${parallaxImg2}
                                 class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title title">Previdência</h5>
@@ -65,7 +66,7 @@ import bankLogo from '../../images/bank-logo.png'
                     <div class="p-2 col-md-4">
                         <div class="card">
                             <img class="card-img3 rounded mx-auto d-block"
-                                src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=950&q=80"
+                                src=${parallaxImg3}
                                 class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title title">Família</h5>
