@@ -13,7 +13,7 @@ import Error404 from './views/pages/Error404.js';
 // 
 let routes = {
     //'/':          {route: Home, fullPage: false},
-    //'/login':     {route: '', fullPage: true},
+    '/login':     {route: '', fullPage: false},
     //'/home':     {route: '', fullPage: false},
     '/cadastro':     {route: cadastro, fullPage: false},
     '/dashboard': {route: Dash, fullPage: false}
