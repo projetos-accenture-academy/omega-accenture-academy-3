@@ -6,7 +6,7 @@ import cssLoading from '../../css/loading.css';
 
 import cssDashboard from '../../css/styles-dashboard.css';
 
-import {fazerTransferencia} from './transacoes.js'
+import {fazerTransferencia} from './Transacoes.js'
 
 const userData = JSON.parse(localStorage.getItem(Constants.userDataCollection));
 
