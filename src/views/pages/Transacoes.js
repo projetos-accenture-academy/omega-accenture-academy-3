@@ -108,9 +108,10 @@ export const fazerTransferencia = async () => {
     
     console.log(document.getElementById('transactions'))
     document.getElementById('transactions').innerHTML = modalTransacoes();
-    let {usuario, token} = await userData;
 
     const userData = JSON.parse(localStorage.getItem(Constants.userDataCollection));
+    let {usuario, token} = await userData;
+    
     document.getElementById('btn-save').addEventListener('click', function () {
         let conta = document.getElementById('inputConta').value,
             contaDestino = document.getElementById('inputContaD').value,
