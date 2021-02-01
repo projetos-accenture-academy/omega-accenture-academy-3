@@ -12,7 +12,7 @@ import Home from './views/pages/home.js';
 // o header e o footer não serão carregados
 // 
 let routes = {
-    //'/':          {route: Home, fullPage: false},
+    '/':          {route: Home, fullPage: false},
     //'/login':     {route: '', fullPage: true},
     '/home':     {route: Home, fullPage: false},
     '/cadastro':     {route: cadastro, fullPage: false},

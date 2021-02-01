@@ -1,40 +1,9 @@
 import homeCSS from '../../css/style_home.css'
-
+import bankLogo from '../../images/bank-logo.png'
 
 
     const homeView = 
-    `<!--Header component-->
-    <div id="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 mb-4">
-            <div class="container d-flex justify-content-between">
-                <a class="navbar-brand logo m-0" id="logo" href="#">
-                    Ωmega Bank
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav ">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html">Logar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="cadastro.html">Cadastre-se</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-
-
-    <!--<div id="main-page-container"></div>-->
-
+    `
     <!--First Container-->
     <div class="container">
         <div class="row mt-5 mb-5">
@@ -52,7 +21,7 @@ import homeCSS from '../../css/style_home.css'
             </div>
             <div class="col-md-6 m-auto p-3">
                 <!--<img src="https://assets.website-files.com/5ff79f3ebebf6b12f6b7747f/5ffe04fc6284b7e90070d985_logo-gama-academy.png" class="img-fluid m-auto" width="100%" alt="Imagem responsiva">-->
-                <img src="./img/bank-logo.png" class="img-fluid m-auto" width="100%" alt="Desafio 6">
+                <img src=${bankLogo} class="img-fluid m-auto" width="100%" alt="Desafio 6">
             </div>
         </div>
     </div>
@@ -193,7 +162,10 @@ import homeCSS from '../../css/style_home.css'
 
 let Home =
 {
-
+    render: () =>
+    {
+        return homeView;
+    }
 }
 
 export default Home;

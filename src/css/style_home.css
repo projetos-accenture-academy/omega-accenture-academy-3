@@ -40,7 +40,7 @@
 
 .card
 {
-    border-radius: 30px;
+    border-radius: 15px;
 }
 
 
@@ -83,7 +83,7 @@ body{
 
 .card-img
 {
-    width: 40%;
+    width: 100%;
 }
 .card-img2
 {
