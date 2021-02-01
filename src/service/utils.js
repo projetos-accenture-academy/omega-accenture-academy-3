@@ -25,6 +25,13 @@ const Utils = {
         return new Promise(resolve => setTimeout(resolve, ms));
     },
 
+    //sends user to designated route
+    RedirectUser: (route = '#/') =>
+    {
+        //console.log(`Redirecting user to ${route}...`);
+        window.location.replace(route); 
+    },
+
 }
 
 export default Utils;
