@@ -6,6 +6,7 @@ import cadastro from './views/pages/cadastro.js';
 import Dash from './views/pages/Dash.js';
 import Error404 from './views/pages/Error404.js';
 import Home from './views/pages/home.js';
+import Login from './views/pages/login.js'
   
 // Utils
 // Lista de rotas com suporte para full page, assim se fullPage for 'TRUE',
@@ -13,8 +14,8 @@ import Home from './views/pages/home.js';
 // 
 let routes = {
     '/':          {route: Home, fullPage: false},
-    //'/login':     {route: '', fullPage: true},
     '/home':     {route: Home, fullPage: false},
+    '/login':     {route: Login, fullPage: false},
     '/cadastro':     {route: cadastro, fullPage: false},
     '/dashboard': {route: Dash, fullPage: false}
 }
