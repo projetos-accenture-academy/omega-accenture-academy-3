@@ -8,6 +8,9 @@ import Error404 from './views/pages/Error404.js';
 import Home from './views/pages/home.js';
 import Login from './views/pages/login.js'
   
+
+
+
 // Utils
 // Lista de rotas com suporte para full page, assim se fullPage for 'TRUE',
 // o header e o footer não serão carregados
