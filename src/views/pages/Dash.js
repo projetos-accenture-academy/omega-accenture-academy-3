@@ -11,7 +11,8 @@ import {fazerTransferencia} from './Transacoes.js'
 const userData = JSON.parse(localStorage.getItem(Constants.userDataCollection));
 
 const requestDashboard = async (initialDate = '', finalDate = '') => {
-    if(userData){
+    const userData = JSON.parse(await localStorage.getItem(Constants.userDataCollection));
+
         const {usuario: {login}, token}  = userData;
             
         const now = new Date();
@@ -37,7 +38,7 @@ const requestDashboard = async (initialDate = '', finalDate = '') => {
                 localStorage.removeItem(Constants.userAccountStatements)
                 console.log('err', err)
             })
-    }
+    
 }
 
 
@@ -137,7 +138,7 @@ const Dash = {
         await Auth.securePage();
         
         await requestDashboard();
-        const userAccountsRaw = localStorage.getItem(Constants.userAccountStatements);
+        const userAccountsRaw = await localStorage.getItem(Constants.userAccountStatements);
         
         let view = `<div class="error-dash">Não foi possível obter os dados do dashboard, por favor tente novamente.</div>`;
 

@@ -83,9 +83,10 @@ let Login =
                         {
 
                             //Save user data in local browser variable for further use
-                            localStorage.setItem(Constants.userDataCollection, JSON.stringify(res.data)); 
-                            
+                            localStorage.setItem(Constants.userDataCollection, JSON.stringify(res.data))
+                                
                             Utils.RedirectUser('#/dashboard');
+                            
                         }
                     }
                 ).catch(err =>
