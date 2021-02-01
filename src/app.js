@@ -5,6 +5,7 @@ import Loading from './views/components/Loading.js';
 import cadastro from './views/pages/cadastro.js';
 import Dash from './views/pages/Dash.js';
 import Error404 from './views/pages/Error404.js';
+import Home from './views/pages/home.js';
 import Login from './views/pages/login.js'
   
 

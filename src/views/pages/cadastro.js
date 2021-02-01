@@ -1,7 +1,5 @@
+import cadastroImg from '../../images/signup.svg';
 import baseURL from '../../service/baseURL.js';
-
-
-
 
 
 
@@ -13,15 +11,15 @@ let cadastro = {
         <div class="container ">
         <div id="resultado"></div>
         
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mt-5">
 
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                   
+                <div class="col-md-6 col-sm-12 col-xs-12 m-auto">
+                <img src=${cadastroImg} class="img-fluid m-auto" width="100%" />
                 </div>
             
             
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                <div id='cadForm'>
+                <div class="col-md-6 col-sm-12 col-xs-12 m-auto" style="background-color:#f0f0f0;border-radius:15px;">
+                <div id='cadForm' class="mt-2 mb-2">
                     <input type="text" id="cpf" maxlength="11" placeholder="Insira o seu CPF" class="form-control mb-3">
                     <input type="text" id="username" placeholder="Nome de usuário (apelido)" class="form-control mb-3">
                     <input type="text" id="fname" placeholder="Escreva aqui o seu email" class="form-control mb-3">

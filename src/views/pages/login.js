@@ -4,7 +4,9 @@ import Constants from "../../service/constants.js";
 import Utils from "../../service/utils.js";
 import loginImg from '../../images/login-omega.svg';
 
-import cssLogin from '../../css/style_login.css'
+
+import loginCSS from '../../css/style_login.css'
+
 
 const loginView = 
     `<div class="container">
