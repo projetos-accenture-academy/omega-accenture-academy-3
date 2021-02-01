@@ -2,14 +2,25 @@ import Auth from "../../service/auth.js";
 import baseURL from '../../service/baseURL.js';
 import Constants from "../../service/constants.js";
 
+import cssLoading from '../../css/loading.css';
+
+import cssDashboard from '../../css/styles-dashboard.css';
+
 const userData = JSON.parse(localStorage.getItem(Constants.userDataCollection));
 
-const requestDashboard = async () => {
+const requestDashboard = async (initialDate = '', finalDate = '') => {
     if(userData){
         const {usuario: {login}, token}  = userData;
+            
+        const now = new Date();
+        const thisMonth = `${now.getFullYear()}-${(now.getMonth() <= 9 ? '0' + (now.getMonth()+1) : now.getMonth()+1)}`;
+        const lastDay = new Date(now.getFullYear(), now.getMonth(), 0).getDate()
+        
+        const ini = initialDate ? initialDate : `${thisMonth}-01`;
+        const final = finalDate ? finalDate : `${thisMonth}-${lastDay}`;
         
         await axios
-            .get(`${baseURL}dashboard?fim=2021-01-31&inicio=2021-01-01&login=${login}`,  {
+            .get(`${baseURL}dashboard?fim=${final}&inicio=${ini}&login=${login}`,  {
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": token
@@ -26,6 +37,37 @@ const requestDashboard = async () => {
             })
     }
 }
+
+
+const modalFilter = `
+
+    <div class="modal fade" id="modal-filter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Filtro de lançamentos da conta X</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body row">
+                    <div class="container flex-column p-3">
+                        <label for="birthday">Período de lançamentos:</label>
+                        <div class="input-group mb-3 ">
+                            <input type="date" class="form-control" id="initialDate" name="initialDate">
+                            <span style="margin: 0 5px" class="d-flex align-items-center">à</span>
+                            <input type="date" class="form-control" id="finalDate" name="finalDate">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                        id="cancel-filter">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="apply-filter">Filtrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+`
 
 
 const viewAccountItem = (conta, label) => {
@@ -57,6 +99,8 @@ const viewAccountItem = (conta, label) => {
                                     data-bs-target="#modal-filter">
                                     Filtros <i class="fas fa-filter"></i>
                                 </button>
+
+                                ${modalFilter}
                             </div>
                         </div>
                         <div class="container lancamentos">
