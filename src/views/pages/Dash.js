@@ -1,7 +1,7 @@
 import Auth from "../../service/auth.js";
 import baseURL from '../../service/baseURL.js';
 import Constants from "../../service/constants.js";
-
+import {fazerTransferencia} from './transacoes.js'
 const userData = JSON.parse(localStorage.getItem(Constants.userDataCollection));
 
 const requestDashboard = async () => {
@@ -99,6 +99,15 @@ const Dash = {
 
             view =  `
                 <div class="container">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div
+                            class="container header-dash p-0 pb-2 mt-2 d-md-flex justify-content-sm-between justify-content-md-between  align-items-center">
+                            <h4 class="page-title">Extrato de lançamentos das contas</h4>
+                            <div id="transactions" class="operations-group d-grid gap-2 d-flex justify-content-center justify-content-md-end">
+                               
+                            </div>
+                        </div>
+                    </div>
                     <div class=" row p-0 m-0 mt-3 d-flex  justify-content-sm-between justify-content-evenly">
                         ${viewAccountItem(contaBancoDash, 'Conta Banco') + viewAccountItem(contaCreditoDash, 'Conta Corrent')}
                     </div>
@@ -110,6 +119,7 @@ const Dash = {
         return view
     },
     after_render: async () => {
+        fazerTransferencia()
         
     }
 }
